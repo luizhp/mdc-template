@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable, Subject } from 'rxjs';
+
 import { ScreenBreakpoint } from '../../models/layouts/screen-breakpoint';
 
 @Injectable({
     providedIn: 'root'
 })
 export class BreakpointDataService {
-
-    // results: Observable<BreakpointState> =
-    //     this.breakpointObserver
-    //         .observe(Breakpoints.Handset);
 
     public screenBreakpoint$: Subject<ScreenBreakpoint> = new Subject<ScreenBreakpoint>();
 
