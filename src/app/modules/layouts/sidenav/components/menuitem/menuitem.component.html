@@ -1,0 +1,10 @@
+<ul *ngFor="let menuCategory of menuStructure" class="site-menu">
+    <li class="site-menu-category">{{menuCategory.category.name}}</li>
+
+    <li *ngFor="let menuEntry of menuCategory.category.items" class="site-menu-item active">
+        <a href="{{menuEntry.href}}">
+            <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
+            <span class="site-menu-title">{{menuEntry.name}}</span>
+        </a>
+    </li>
+</ul>

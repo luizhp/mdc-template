@@ -14,6 +14,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { SidenavmenubarComponent } from './components/sidenavmenubar/sidenavmenubar.component';
 import { SidenavtoolbarComponent } from './components/sidenavtoolbar/sidenavtoolbar.component';
+import { SidenavmenuComponent } from './components/sidenavmenu/sidenavmenu.component';
+import { MenuitemComponent } from './components/menuitem/menuitem.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { SidenavtoolbarComponent } from './components/sidenavtoolbar/sidenavtool
     SidenavbarComponent,
     SidenavmenubarComponent,
     SidenavtoolbarComponent,
+    SidenavmenuComponent,
+    MenuitemComponent,
   ],
   imports: [
     BrowserModule,

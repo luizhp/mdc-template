@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable, Subject } from 'rxjs';
 
-import { ScreenBreakpoint } from '../../models/layouts/screen-breakpoint';
+import { ScreenBreakpoint } from '../../models/layouts/screen-breakpoint.interface';
 
 @Injectable({
     providedIn: 'root'
