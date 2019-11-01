@@ -9,13 +9,19 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { SidenavPageComponent } from './pages/sidenav/sidenav.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
+import { SidenavmenubarComponent } from './components/sidenavmenubar/sidenavmenubar.component';
+import { SidenavtoolbarComponent } from './components/sidenavtoolbar/sidenavtoolbar.component';
 
 @NgModule({
   declarations: [
     SidenavComponent,
-    SidenavPageComponent
+    SidenavPageComponent,
+    SidenavbarComponent,
+    SidenavmenubarComponent,
+    SidenavtoolbarComponent,
   ],
   imports: [
     BrowserModule,

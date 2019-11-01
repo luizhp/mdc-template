@@ -1,9 +1,12 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { BreakpointDataService } from './../../../../../services/layout/breakpoint-data.service';
-//import { BreakpointState } from '@angular/cdk/layout';
-import { ScreenBreakpoint } from './../../../../../models/layouts/screen-breakpoint';
 import { MatSidenav } from '@angular/material/sidenav';
+
+import { BreakpointLayoutService } from '../../../../../services/layout/breakpoint-layout.service';
+import { ScreenBreakpoint } from './../../../../../models/layouts/screen-breakpoint';
+import { DrawerLayoutService } from './../../../../../services/layout/drawer-layout.service';
+import { ThrowStmt } from '@angular/compiler';
+
 
 @Component({
   selector: 'mdc-layout-sidenav',
@@ -17,54 +20,66 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   @ViewChild('drawer', { static: true }) drawer: MatSidenav;
 
-  toolbarTitle: string = 'MDC TEMPLATE';
-  showToolbarMenuButton: boolean = true;
-  showToolbarTitle: boolean = true;
-
-  toolbarMenuTitle: string = 'Remark';
-
   drawerRole: string = 'navigation'; //'dialog'; //'navigation';
   drawerMode: string = 'side';   //'side';   //'over' //'push'
   drawerOpened: boolean = true;
   drawerPosition: string = 'start'; //'start' //'end'
 
-  //isHandset$: Observable<boolean>;
-  isHandset$: boolean;
+  constructor(
+    private breakpointLayoutService: BreakpointLayoutService,
+    private drawerLayoutService: DrawerLayoutService
+  ) {
 
-  constructor(private breakpointDataService: BreakpointDataService) {
-
-    // this._subscriptions.add(
-    //   breakpointDataService
-    //     .results
-    //     .subscribe(x => {
-    //       //console.log('subscription this.isHandset$');
-    //       //console.log(this.isHandset$);
-    //       this.isHandset$ = x.matches;
-    //       //console.log('subscription Breakpoints.Handset');
-    //       //console.log(x);
-    //     })
-    // );
-
-    this._subscriptions.add(
-      breakpointDataService
-        .screenBreakpoint$
-        .subscribe(sb => this._screenBreakpoint = sb)
-    );
+    this._startSubscriptions();
 
   }
 
   ngOnInit() {
 
-    console.log('this.drawer._width');
-    console.log(this.drawer._width);
-
-    //console.log('ngOnInit this.isHandset$');
-    //console.log(this.isHandset$);
+    //console.log('this.drawer._width');
+    //console.log(this.drawer._width);
 
   }
 
   ngOnDestroy(): void {
     this._subscriptions.unsubscribe();
+  }
+
+  private _startSubscriptions(): void {
+
+    this._subscriptions.add(
+      this.breakpointLayoutService
+        .screenBreakpoint$
+        .subscribe(sb => this._screenBreakpoint = sb)
+    );
+
+    this._subscriptions.add(
+      this.drawerLayoutService
+        .toggleDrawer$
+        .subscribe(dw => {
+          if (dw)
+            this.drawer.toggle();
+        })
+    );
+
+    this._subscriptions.add(
+      this.drawerLayoutService
+        .openDrawer$
+        .subscribe(dw => {
+          if (dw)
+            this.drawer.open();
+        })
+    );
+
+    this._subscriptions.add(
+      this.drawerLayoutService
+        .openDrawer$
+        .subscribe(dw => {
+          if (dw)
+            this.drawer.close();
+        })
+    );
+
   }
 
   arrangeLayout(): void {
@@ -74,7 +89,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
     //if (this.drawer.toggle())
     //this.showToolbarMenuButton
-    
+
   }
 
 

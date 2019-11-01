@@ -7,7 +7,7 @@ import { ScreenBreakpoint } from '../../models/layouts/screen-breakpoint';
 @Injectable({
     providedIn: 'root'
 })
-export class BreakpointDataService {
+export class BreakpointLayoutService {
 
     public screenBreakpoint$: Subject<ScreenBreakpoint> = new Subject<ScreenBreakpoint>();
 

@@ -1,0 +1,39 @@
+/* site-navbar */
+
+.site-navbar {
+    background-color: #3f51b5 !important;
+    color: white;
+}
+
+.site-navbar-brand {
+    /* display: inline-block; */
+    float: left;
+    height: 25px;
+    /* padding: 1.5715rem 1.429rem; */
+    padding: 0px 0px;
+    margin: 0;
+    font-size: 1.286rem;
+    font-weight: 500;
+    line-height: 22px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.site-navbar-brand-logo {
+    display: inline-block;
+    height: 30px;
+    margin-top: -3px;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.site-navbar-brand-text {
+    margin-left: 0.429rem;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    white-space: nowrap;
+    text-align: left;
+}
