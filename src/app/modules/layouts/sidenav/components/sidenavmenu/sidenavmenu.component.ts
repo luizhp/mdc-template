@@ -17,7 +17,7 @@ export class SidenavmenuComponent implements OnInit {
       items: [
         {
           name: 'Dashboard',
-          href: 'index.html',
+          href: '/',
           icon: 'dashboard',
           items: []
         },
@@ -313,7 +313,7 @@ export class SidenavmenuComponent implements OnInit {
       items: [
         {
           name: 'Basic UI',
-          icon: 'md-palette',
+          icon: 'palette',
           isFold: true,
           items: [
             {
@@ -416,7 +416,7 @@ export class SidenavmenuComponent implements OnInit {
         },
         {
           name: 'Advanced UI',
-          icon: 'md-format-color-fill',
+          icon: 'format_paint',
           isFold: true,
           items: [
             {
@@ -498,7 +498,7 @@ export class SidenavmenuComponent implements OnInit {
         },
         {
           name: 'Structure',
-          icon: 'md-puzzle-piece',
+          icon: 'waves',
           isFold: true,
           items: [
             {
@@ -590,7 +590,7 @@ export class SidenavmenuComponent implements OnInit {
         },
         {
           name: 'Widgets',
-          icon: 'md-widgets',
+          icon: 'widgets',
           isFold: true,
           items: [
             {
@@ -627,7 +627,7 @@ export class SidenavmenuComponent implements OnInit {
         },
         {
           name: 'Forms',
-          icon: 'md-comment-alt-text',
+          icon: 'textsms',
           isFold: true,
           items: [
             {
@@ -700,7 +700,7 @@ export class SidenavmenuComponent implements OnInit {
         },
         {
           name: 'Tables',
-          icon: 'md-border-all',
+          icon: 'border_all',
           isFold: true,
           items: [
             {
@@ -757,7 +757,7 @@ export class SidenavmenuComponent implements OnInit {
         },
         {
           name: 'Chart',
-          icon: 'md-chart',
+          icon: 'insert_chart',
           isFold: true,
           items: [
             {
@@ -821,7 +821,7 @@ export class SidenavmenuComponent implements OnInit {
       items: [
         {
           name: 'Apps',
-          icon: 'md-apps',
+          icon: 'apps',
           isFold: false,
           items: [
             {

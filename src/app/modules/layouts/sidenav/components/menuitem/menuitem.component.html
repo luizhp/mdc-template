@@ -1,36 +1,33 @@
-<ng-container *ngFor="let menuEntry of menuStructure">
+<ul class="site-menu">
+    <ng-container *ngFor="let menuEntry of menuStructure">
 
-    <ng-container *ngIf="menuEntry.isCategory">
-        <li class="site-menu-category">{{menuEntry.name}}</li>
-    </ng-container>
+        <ng-container *ngIf="menuEntry.isCategory">
+            <li class="site-menu-category">{{menuEntry.name}}</li>
+            <mdc-menuitem [menu]="menuEntry.items"></mdc-menuitem>
+        </ng-container>
 
-    <ng-container *ngIf="menuEntry.items.length === 0">
-        <li class="site-menu-item">
-            <a href="{{menuEntry.href}}">
-                <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
-                <span class="site-menu-title">{{menuEntry.name}}</span>
-            </a>
-        </li>
-    </ng-container>
+        <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length === 0">
+            <li class="site-menu-item" [routerLinkActive]="'active'">
+                <a [routerLink]="menuEntry.href">
+                    <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
+                    <span class="site-menu-title">{{menuEntry.name}}</span>
+                </a>
+            </li>
+        </ng-container>
 
-    <ng-container *ngIf="menuEntry.items.length > 0">
-        <!-- <ng-container *ngFor="let menuItem of menuEntry.items"> -->
-
-            <li class="site-menu-item has-sub open active">
+        <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length > 0">
+            <li class="site-menu-item has-sub">
                 <a href="javascript:void(0)">
                     <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
                     <span class="site-menu-title">{{menuEntry.name}}</span>
                     <mat-icon aria-label="icon" class="site-menu-icon site-menu-arrow">keyboard_arrow_right
                     </mat-icon>
                 </a>
-                <!-- <ng-container *ngFor="let menuSubItem of menuItem.items"> -->
                 <ul class="site-menu-sub">
                     <mdc-menuitem [menu]="menuEntry.items"></mdc-menuitem>
                 </ul>
-                <!-- </ng-container> -->
             </li>
+        </ng-container>
 
-        <!-- </ng-container> -->
     </ng-container>
-
-</ng-container>
+</ul>
