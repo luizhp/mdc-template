@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { LayoutModule } from '@angular/cdk/layout';
 
-import { LayoutsSidenavModule } from './modules/layouts/sidenav/sidenav.module';
+import { LayoutBaseModule } from './modules/layouts/base/layout-base.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,7 @@ import { LayoutsSidenavModule } from './modules/layouts/sidenav/sidenav.module';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    LayoutsSidenavModule
+    LayoutBaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,12 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="drawerRole" [mode]="drawerMode"
+        position="drawerPosition" [opened]="drawerOpened">
+        <mdc-sidenav-drawer-toolbar></mdc-sidenav-drawer-toolbar>
+        <mdc-sidenav-drawer-menu></mdc-sidenav-drawer-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mdc-sidenav-content-toolbar></mdc-sidenav-content-toolbar>
+        <!-- Add Content Here -->
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
