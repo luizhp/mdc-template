@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { MaterialModule } from './../../material.module';
+import { MaterialModule } from '../../material.module';
 
 import { ContainerComponent } from './sidenav/container/container.component';
 import { ContentToolbarComponent } from './sidenav/content-toolbar/content-toolbar.component';
