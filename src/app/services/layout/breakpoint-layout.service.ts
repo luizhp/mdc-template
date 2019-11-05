@@ -4,9 +4,11 @@ import { Observable, Subject } from 'rxjs';
 
 import { ScreenBreakpoint } from '../../models/layouts/screen-breakpoint.interface';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable(
+    // {
+    //     providedIn: 'root'
+    // }
+)
 export class BreakpointLayoutService {
 
     public screenBreakpoint$: Subject<ScreenBreakpoint> = new Subject<ScreenBreakpoint>();

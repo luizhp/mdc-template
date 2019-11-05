@@ -2,7 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
+import { DrawerLayoutService } from './../../../../services/layout/drawer-layout.service';
+import { SidenavService } from 'src/app/services/layout/sidenav.service';
+
 import { MaterialModule } from '../../material.module';
+
+import { SharedComponentsModule } from './../../../../components/shared-components.module';
 
 import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './sidenav/container/container.component';
@@ -26,10 +31,15 @@ import { DrawerMenuItemsComponent } from './sidenav/drawer-menu-items/drawer-men
         BrowserModule,
         RouterModule,
         MaterialModule,
+        SharedComponentsModule,
     ],
-    providers: [],
+    providers: [
+        DrawerLayoutService,
+        SidenavService,
+    ],
     exports: [
         MaterialModule,
+        SharedComponentsModule,
         HeaderComponent,
         ContainerComponent,
         ContentComponent,

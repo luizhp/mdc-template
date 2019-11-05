@@ -4,8 +4,9 @@ import { Observable, Subscription } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
 
 import { BreakpointLayoutService } from './../../../../../../services/layout/breakpoint-layout.service';
-import { ScreenBreakpoint } from './../../../../../../models/layouts/screen-breakpoint.interface';
 import { DrawerLayoutService } from './../../../../../../services/layout/drawer-layout.service';
+
+import { ScreenBreakpoint } from './../../../../../../models/layouts/screen-breakpoint.interface';
 
 @Component({
   selector: 'mdc-sidenav-container',

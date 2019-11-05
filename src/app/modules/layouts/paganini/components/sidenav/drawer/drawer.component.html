@@ -1,4 +1,4 @@
-<mat-sidenav #leftSidenav mode="side" opened>
+<mat-sidenav #drawer mode="side" opened>
     <div class="sidenav_container" [@onSideNavChange]="sideNavState ? 'open' : 'close'">
         <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;">
 
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <span class="spacer"></span>
+        <mdc-layout-spacer></mdc-layout-spacer>
         <div fxLayout="row" fxLayoutAlign="end center" style="padding: 0px 10px;">
             <button mat-icon-button (click)="onSidenavToggle()">
                 <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>

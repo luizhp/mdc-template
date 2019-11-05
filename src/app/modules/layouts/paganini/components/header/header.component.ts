@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+//import { MatSidenav } from '@angular/material';
+
+import { DrawerLayoutService } from './../../../../../services/layout/drawer-layout.service';
 
 @Component({
   selector: 'mdc-header',
@@ -8,11 +10,18 @@ import { MatSidenav } from '@angular/material';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() sidenav: MatSidenav;
+  //@Input() sidenav: MatSidenav;
+  // [sidenav]="leftSidenav"
 
-  constructor() { }
+  constructor(
+    private _drawerLayoutService: DrawerLayoutService
+  ) { }
 
   ngOnInit() {
+  }
+
+  drawerToggle() {
+    this._drawerLayoutService.toggle();
   }
 
 }
