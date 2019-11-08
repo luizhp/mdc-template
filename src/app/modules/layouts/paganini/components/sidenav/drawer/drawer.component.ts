@@ -5,7 +5,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
 
-import { onSideNavChange, animateText } from './../../../../../../animations/layouts/paganini.animations';
+import { onSideNavChange, animateText } from './../../../../../../animations/layouts/maua.animations';
 
 import { DrawerLayoutService } from './../../../../../../services/layout/drawer-layout.service';
 import { SidenavService } from './../../../../../../services/layout/sidenav.service';

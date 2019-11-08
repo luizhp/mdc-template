@@ -43,6 +43,7 @@ export const animateText = trigger('animateText', [
     state('show',
         style({
             'display': 'block',
+            'margin-left': '10px',
             opacity: 1,
         })
     ),

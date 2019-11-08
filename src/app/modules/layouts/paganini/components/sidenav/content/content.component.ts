@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { SidenavService } from 'src/app/services/layout/sidenav.service';
 
-import { onMainContentChange } from './../../../../../../animations/layouts/paganini.animations';
+import { onMainContentChange } from './../../../../../../animations/layouts/maua.animations';
 
 @Component({
   selector: 'mdc-sidenav-content',
