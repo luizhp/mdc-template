@@ -16,6 +16,9 @@ import { HeaderComponent } from '../components/header/header.component'
 import { LeftMenuComponent } from '../components/left-menu/left-menu.component';
 import { MauaSidenavContentComponent } from './../components/sidenav/content/content.component';
 
+import { MauaSidenavDrawerProfileComponent } from './../components/sidenav/drawer/profile/profile.component';
+import { MauaSidenavDrawerMenuComponent } from './../components/sidenav/drawer/menu/menu.component';
+
 import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-page.component'
 
 
@@ -32,10 +35,14 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     HeaderComponent,
     LeftMenuComponent,
     MauaSidenavContentComponent,
+    MauaSidenavDrawerProfileComponent,
+    MauaSidenavDrawerMenuComponent,
     LayoutMauaPageComponent,
   ],
   exports: [
     MauaSidenavContentComponent,
+    MauaSidenavDrawerProfileComponent,
+    MauaSidenavDrawerMenuComponent,
     LayoutMauaPageComponent,
   ],
   providers: [SidenavService]
