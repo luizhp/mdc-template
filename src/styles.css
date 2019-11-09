@@ -17,3 +17,7 @@ body {
     -moz-osx-font-smoothing: antialased;
     font-family: 'Roboto', sans-serif;
 }
+
+.layout-spacer {
+    flex: 1 1 auto;
+}

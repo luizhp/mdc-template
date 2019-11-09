@@ -2,12 +2,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { SpacerComponent } from './spacer/spacer.component';
+//import { SpacerComponent } from './spacer/spacer.component';
 
 
 @NgModule({
     declarations: [
-        SpacerComponent
+        //SpacerComponent
     ],
     imports: [
         CommonModule,
@@ -22,7 +22,7 @@ import { SpacerComponent } from './spacer/spacer.component';
     ],
     providers: [],
     exports: [
-        SpacerComponent
+        //SpacerComponent
     ]
 })
 export class LayoutsModule { }

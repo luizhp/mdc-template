@@ -5,10 +5,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FormsModule } from '@angular/forms';
 
-//import { MaterialMauaModule } from './material.module';
 import { MaterialModule } from '../../material.module';
+import { SharedComponentsModule } from './../../../../components/shared-components.module';
 
-//import { SidenavService } from './services/sidenav.service'
 import { SidenavService } from '../../../../services/layout/sidenav.service';
 
 //import { HelloComponent } from './hello.component';
@@ -29,6 +28,7 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
+    SharedComponentsModule
   ],
   declarations: [
     //HelloComponent,
@@ -40,6 +40,7 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     LayoutMauaPageComponent,
   ],
   exports: [
+    SharedComponentsModule,
     MauaSidenavContentComponent,
     MauaSidenavDrawerProfileComponent,
     MauaSidenavDrawerMenuComponent,
