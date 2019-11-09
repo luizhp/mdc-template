@@ -1,8 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 
-import { SidenavService } from './../../../../../services/layout/sidenav.service';
 import { onMainContentChange } from './../../../../../animations/layouts/maua.animations';
+
+import { SidenavService } from './../../../../../services/layout/sidenav.service';
+import { DrawerLayoutService } from './../../../../../services/layout/drawer-layout.service';
+
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'mdc-layout-maua-page',
@@ -15,9 +19,11 @@ export class LayoutMauaPageComponent implements OnInit, OnDestroy {
   private _subscriptions: Subscription = new Subscription();
 
   public onSideNavChange: boolean;
+  @ViewChild('drawer', { static: true }) drawer: MatSidenav;
 
   constructor(
-    private _sidenavService: SidenavService
+    private _sidenavService: SidenavService,
+    private _layoutDrawerService: DrawerLayoutService,
   ) {
     this._startSubscriptions();
   }
@@ -31,11 +37,21 @@ export class LayoutMauaPageComponent implements OnInit, OnDestroy {
   private _startSubscriptions(): void {
 
     this._subscriptions.add(
-      this._sidenavService.sideNavState$.subscribe(res => {
-        console.log(res)
-        this.onSideNavChange = res;
-      })
+      this._sidenavService
+        .sideNavState$
+        .subscribe(res => {
+          console.log(res)
+          this.onSideNavChange = res;
+        })
     );
+
+    this._subscriptions.add(
+      this._layoutDrawerService
+        .toggleDrawer$
+        .subscribe(t => {
+          this.drawer.toggle();
+        })
+    )
 
   }
 

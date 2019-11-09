@@ -1,18 +1,20 @@
 <div>
-  <app-header [sidenav]="leftSidenav"></app-header>
+
+  <mdc-maua-header></mdc-maua-header>
 
   <mat-sidenav-container class="sidenav-container">
 
-    <mat-sidenav #leftSidenav mode="side" opened>
+    <mat-sidenav #drawer mode="side" opened>
       <app-left-menu></app-left-menu>
     </mat-sidenav>
+    <!-- <mdc-maua-sidenav-drawer></mdc-maua-sidenav-drawer> -->
 
     <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
-      <mdc-maua-sidenav-content></mdc-maua-sidenav-content>
+      <mdc-maua-sidenav-content>
+        <ng-content></ng-content>
+      </mdc-maua-sidenav-content>
     </mat-sidenav-content>
 
   </mat-sidenav-container>
 
 </div>
-
-<!-- <router-outlet></router-outlet> -->

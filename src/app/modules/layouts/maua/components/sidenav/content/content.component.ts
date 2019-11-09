@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MaterialModule } from './../../../../material.module';
-
 import { SidenavService } from '../../../../../../services/layout/sidenav.service';
 import { onMainContentChange } from '../../../../../../animations/layouts/maua.animations';
 

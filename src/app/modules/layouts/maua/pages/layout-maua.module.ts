@@ -6,12 +6,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from '../../material.module';
-import { SharedComponentsModule } from './../../../../components/shared-components.module';
+//import { SharedComponentsModule } from './../../../../components/shared-components.module';
 
 import { SidenavService } from '../../../../services/layout/sidenav.service';
+import { DrawerLayoutService } from './../../../../services/layout/drawer-layout.service';
 
 //import { HelloComponent } from './hello.component';
-import { HeaderComponent } from '../components/header/header.component'
+import { MauaHeaderComponent } from '../components/header/header.component'
 import { LeftMenuComponent } from '../components/left-menu/left-menu.component';
 import { MauaSidenavContentComponent } from './../components/sidenav/content/content.component';
 
@@ -20,7 +21,6 @@ import { MauaSidenavDrawerMenuComponent } from './../components/sidenav/drawer/m
 
 import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-page.component'
 
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,11 +28,11 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
-    SharedComponentsModule
+    //SharedComponentsModule
   ],
   declarations: [
     //HelloComponent,
-    HeaderComponent,
+    MauaHeaderComponent,
     LeftMenuComponent,
     MauaSidenavContentComponent,
     MauaSidenavDrawerProfileComponent,
@@ -40,12 +40,15 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     LayoutMauaPageComponent,
   ],
   exports: [
-    SharedComponentsModule,
+    //SharedComponentsModule,
     MauaSidenavContentComponent,
     MauaSidenavDrawerProfileComponent,
     MauaSidenavDrawerMenuComponent,
     LayoutMauaPageComponent,
   ],
-  providers: [SidenavService]
+  providers: [
+    SidenavService,
+    DrawerLayoutService,
+  ]
 })
 export class LayoutMauaModule { }

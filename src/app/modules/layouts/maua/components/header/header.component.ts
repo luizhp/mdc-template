@@ -1,18 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatSidenav, MatIcon } from '@angular/material';
+
+import { DrawerLayoutService } from './../../../../../services/layout/drawer-layout.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'mdc-maua-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class MauaHeaderComponent implements OnInit {
 
-  @Input() sidenav: MatSidenav
-
-  constructor() { }
+  constructor(
+    private _drawerLayoutService: DrawerLayoutService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  onDrawerToggle() {
+    console.log('HEADER click menu to drawer toggle');
+    this._drawerLayoutService.toggle();
   }
 
 }
