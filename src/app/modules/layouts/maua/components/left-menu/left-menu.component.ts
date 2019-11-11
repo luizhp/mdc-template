@@ -22,8 +22,13 @@ export class LeftMenuComponent implements OnInit {
   }
 
   onSidenavToggle() {
+
     this.sideNavState = !this.sideNavState;
-    this._sidenavService.sideNavState$.next(this.sideNavState)
+
+    this._sidenavService
+      .sideNavState$
+      .next(this.sideNavState);
+
   }
 
 }

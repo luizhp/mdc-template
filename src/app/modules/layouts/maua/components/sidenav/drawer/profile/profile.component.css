@@ -1,6 +1,127 @@
-.jim {
+.user_menu {
+    /* background-image: url('/assets/images/background/bluewave.png'); */
+    padding-top: 0px;
+}
+
+.avatar {
+    /* position: relative;
+    display: inline-block;
+    width: 40px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    border-radius: 1000px; */
     width: 30px;
     height: 30px;
     object-fit: cover;
     border-radius: 50%;
 }
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+/* .avatar-lg {
+    width: 50px;
+} */
+
+/* .jim {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+} */
+
+/* .cover-image {
+    height: 100%;
+}
+
+
+
+.overlay-background {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.vertical-align-middle {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+
+.avatar i {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+}
+
+.avatar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 0 none;
+    border-radius: 1000px;
+}
+
+.avatar-online i {
+    background-color: #4caf50;
+}
+
+.avatar-off i {
+    background-color: #616161;
+}
+
+.avatar-busy i {
+    background-color: #ff9800;
+}
+
+.avatar-away i {
+    background-color: #f44336;
+}
+
+.avatar-100 {
+    width: 100px;
+}
+
+.avatar-100 i {
+    width: 20px;
+    height: 20px;
+}
+
+
+.avatar-lg i {
+    width: 12px;
+    height: 12px;
+}
+
+.avatar-sm {
+    width: 30px;
+}
+
+.avatar-sm i {
+    width: 8px;
+    height: 8px;
+}
+
+.avatar-xs {
+    width: 20px;
+}
+
+.avatar-xs i {
+    width: 7px;
+    height: 7px;
+}
+
+.site-menubar-info {
+    overflow: hidden;
+} */

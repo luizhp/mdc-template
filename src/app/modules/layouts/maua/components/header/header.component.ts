@@ -17,7 +17,6 @@ export class MauaHeaderComponent implements OnInit {
   }
 
   onDrawerToggle() {
-    console.log('HEADER click menu to drawer toggle');
     this._drawerLayoutService.toggle();
   }
 
