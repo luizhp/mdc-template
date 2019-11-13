@@ -1,22 +1,17 @@
-<div class="user_menu">
-    <!-- <mat-nav-list> -->
-    <div>
-        <img class="cover-image" src="/assets/images/background/bluewave.png" alt="...">
+<div class="site-menubar-header" [@animateText]="linkText ? 'show' : 'hide'">
+    <div class="cover overlay">
+        <img class="cover-image" src="/assets/images/background/dashboard-header.jpg" alt="...">
         <div class="overlay-panel vertical-align overlay-background">
             <div class="vertical-align-middle">
-                <a href="javascript:void(0)">
-                    <!-- <a class="avatar avatar-lg" href="javascript:void(0)"> -->
-                    <img class="avatar avatar-lg"
-                        src="https://cdn2.iconfinder.com/data/icons/audio-16/96/user_avatar_profile_login_button_account_member-512.png"
-                        alt="">
+                <a class="avatar avatar-lg" href="javascript:void(0)">
+                    <img src="/assets/images/profile.jpg" alt="" [@animateText]="linkText ? 'show' : 'hide'">
                 </a>
-                <div class="site-menubar-info" [@animateText]="linkText ? 'show' : 'hide'">
+                <div class="site-menubar-info">
                     <h5 class="site-menubar-user">Machi</h5>
                     <p class="site-menubar-email">machidesign@gmail.com</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- </mat-nav-list> -->
-    <mat-divider></mat-divider>
 </div>
+<mat-divider></mat-divider>

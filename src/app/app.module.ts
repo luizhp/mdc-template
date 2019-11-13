@@ -11,11 +11,8 @@ import { AppComponent } from './app.component';
 //import { SharedComponentsModule } from './components/shared-components.module';
 
 import { LayoutBaseModule } from './modules/layouts/base/layout-base.module';
-import { LayoutPaganiniModule } from './modules/layouts/paganini/layout-paganini.module';
 import { LayoutMauaModule } from './modules/layouts/maua/pages/layout-maua.module';
 
-//import { AppMauaModule } from './modules/layouts/maua/app.module';
-//import { LayoutMauaPageComponent } from './modules/layouts/maua/pages/layout-maua-page/layout-maua-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +26,6 @@ import { LayoutMauaModule } from './modules/layouts/maua/pages/layout-maua.modul
     //LayoutModule,
     //SharedComponentsModule,
     LayoutBaseModule,
-    LayoutPaganiniModule,
     LayoutMauaModule,
   ],
   providers: [],

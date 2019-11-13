@@ -9,7 +9,7 @@ export const onSideNavChange = trigger('onSideNavChange', [
     ),
     state('open',
         style({
-            'min-width': '200px'
+            'min-width': '260px'
         })
     ),
     transition('close => open', animate('250ms ease-in')),
@@ -25,7 +25,7 @@ export const onMainContentChange = trigger('onMainContentChange', [
     ),
     state('open',
         style({
-            'margin-left': '200px'
+            'margin-left': '260px'
         })
     ),
     transition('close => open', animate('250ms ease-in')),
@@ -43,10 +43,9 @@ export const animateText = trigger('animateText', [
     state('show',
         style({
             'display': 'block',
-            'margin-left': '10px',
             opacity: 1,
         })
     ),
-    transition('close => open', animate('350ms ease-in')),
-    transition('open => close', animate('200ms ease-out')),
+    transition('hide => show', animate('350ms ease-in')),
+    transition('show => hide', animate('200ms ease-out')),
 ]);

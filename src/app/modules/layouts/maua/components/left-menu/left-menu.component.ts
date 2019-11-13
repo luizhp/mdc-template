@@ -16,9 +16,15 @@ export class LeftMenuComponent implements OnInit {
 
   constructor(
     private _sidenavService: SidenavService,
-  ) { }
+  ) { 
+
+  }
 
   ngOnInit() {
+
+    //remover
+    //setTimeout(() => this.onSidenavToggle(), 200);
+
   }
 
   onSidenavToggle() {
