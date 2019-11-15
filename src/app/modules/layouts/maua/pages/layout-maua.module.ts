@@ -1,5 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -18,6 +20,7 @@ import { MauaSidenavContentComponent } from './../components/sidenav/content/con
 
 import { MauaSidenavDrawerProfileComponent } from './../components/sidenav/drawer/profile/profile.component';
 import { MauaSidenavDrawerMenuComponent } from './../components/sidenav/drawer/menu/menu.component';
+import { MauaSidenavDrawerMenuItemsComponent } from '../components/sidenav/drawer/menu-items/menu-items.component';
 
 import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-page.component'
 
@@ -25,6 +28,7 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
     FlexLayoutModule,
     FormsModule,
     MaterialModule,
@@ -37,6 +41,7 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     MauaSidenavContentComponent,
     MauaSidenavDrawerProfileComponent,
     MauaSidenavDrawerMenuComponent,
+    MauaSidenavDrawerMenuItemsComponent,
     LayoutMauaPageComponent,
   ],
   exports: [
@@ -44,6 +49,7 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
     MauaSidenavContentComponent,
     MauaSidenavDrawerProfileComponent,
     MauaSidenavDrawerMenuComponent,
+    MauaSidenavDrawerMenuItemsComponent,
     LayoutMauaPageComponent,
   ],
   providers: [
