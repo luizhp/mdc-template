@@ -1,10 +1,3 @@
-<!-- <a mat-list-item *ngFor="let page of pages">
-
-    <mat-icon style="padding-right:5px;">{{page?.icon}}</mat-icon>
-    <span [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
-
-</a> -->
-
 <ng-container *ngFor="let menuEntry of menuStructure">
 
     <ng-container *ngIf="menuEntry.isCategory">
@@ -13,12 +6,23 @@
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length === 0">
-        <li class="site-menu-item" [routerLinkActive]="'active'" [@animateText]="linkText ? 'show' : 'hide'">
-            <a [routerLink]="menuEntry.href">
-                <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
-                <span class="site-menu-title">{{menuEntry.name}}</span>
-            </a>
-        </li>
+        <ng-container *ngIf="linkText">
+            <li class="site-menu-item" [routerLinkActive]="'active'" matTooltip="{{menuEntry.name}}">
+                <a [routerLink]="menuEntry.href">
+                    <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
+                    <span class="site-menu-title">{{menuEntry.name}}</span>
+                </a>
+            </li>
+        </ng-container>
+        <ng-container *ngIf="!linkText">
+            <li class="site-menu-item site-menu-item-reduced" [routerLinkActive]="'active'" matTooltip="{{menuEntry.name}}">
+                <a [routerLink]="menuEntry.href">
+                    <mat-icon aria-label="icon" class="site-menu-icon-reduced">
+                        {{menuEntry.icon}}
+                    </mat-icon>
+                </a>
+            </li>
+        </ng-container>
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length > 0">

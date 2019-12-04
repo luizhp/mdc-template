@@ -37,13 +37,13 @@ export const animateText = trigger('animateText', [
     state('hide',
         style({
             'display': 'none',
-            opacity: 0,
+            'opacity': 0,
         })
     ),
     state('show',
         style({
             'display': 'block',
-            opacity: 1,
+            'opacity': 1,
         })
     ),
     transition('hide => show', animate('350ms ease-in')),
