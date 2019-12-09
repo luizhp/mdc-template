@@ -1,3 +1,4 @@
+import { MenuService } from './../../../../services/structure/menu.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -55,6 +56,7 @@ import { LayoutMauaPageComponent } from '../pages/layout-maua-page/layout-maua-p
   providers: [
     SidenavService,
     DrawerLayoutService,
+    MenuService
   ]
 })
 export class LayoutMauaModule { }
