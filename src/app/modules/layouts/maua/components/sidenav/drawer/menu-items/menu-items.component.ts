@@ -7,20 +7,20 @@ import { onSideNavChange, animateText } from 'src/app/animations/layouts/maua.an
 import { Menuitem } from 'src/app/models/layouts/menuitem.interface';
 
 @Component({
-  selector: 'mdc-maua-sidenav-drawer-menu-items',
+  selector: 'app-mdc-maua-sidenav-drawer-menu-items',
   templateUrl: './menu-items.component.html',
   styleUrls: ['./menu-items.component.css'],
   animations: [onSideNavChange, animateText]
 })
 export class MauaSidenavDrawerMenuItemsComponent implements OnInit, OnDestroy {
 
-  private _subscriptions: Subscription = new Subscription();
-  public linkText: boolean = false;
+  private subscriptions: Subscription = new Subscription();
+  public linkText = false;
 
-  @Input('menu') menuStructure: Menuitem[];
+  @Input() menuStructure: Menuitem[];
 
   constructor(
-    private _sidenavService: SidenavService,
+    private sidenavService: SidenavService,
   ) {
     this._startSubscriptions();
   }
@@ -28,15 +28,16 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnInit, OnDestroy {
   ngOnInit() { }
 
   ngOnDestroy(): void {
-    this._subscriptions.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   private _startSubscriptions(): void {
-    this._subscriptions.add(
-      this._sidenavService
-        .sideNavState$
-        .subscribe(sn => this.linkText = sn)
-    );
+    this.subscriptions
+      .add(
+        this.sidenavService
+          .sideNavState$
+          .subscribe(sn => this.linkText = sn)
+      );
   }
 
 }

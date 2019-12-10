@@ -1,11 +1,19 @@
-<!-- <mdc-layout-base-page>
-    conteúdo aqui
-</mdc-layout-base-page> -->
+<ng-container *ngIf="isTemplateMaterial">
+    <app-mdc-layout-maua-page>
+        <span style="font-size:95px;">🃏</span>
+        conteúdo aqui
+        <span style="font-size:95px;">🃏</span>
+        <br>
+        <router-outlet></router-outlet>
+    </app-mdc-layout-maua-page>
+</ng-container>
 
-<mdc-layout-maua-page>
-    <span style="font-size:95px;">🃏</span>
-    conteúdo aqui
-    <span style="font-size:95px;">🃏</span>
-    <br>
-    <router-outlet></router-outlet>
-</mdc-layout-maua-page>
+<ng-container *ngIf="!isTemplateMaterial">
+    <app-mdc-layout-base-page>
+        <span style="font-size:95px;">🃏</span>
+        conteúdo aqui
+        <span style="font-size:95px;">🃏</span>
+        <br>
+        <router-outlet></router-outlet>
+    </app-mdc-layout-base-page>
+</ng-container>

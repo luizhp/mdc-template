@@ -2,7 +2,7 @@
 
     <ng-container *ngIf="menuEntry.isCategory">
         <li class="site-menu-category" [@animateText]="linkText ? 'show' : 'hide'">{{menuEntry.name}}</li>
-        <mdc-maua-sidenav-drawer-menu-items [menu]="menuEntry.items"></mdc-maua-sidenav-drawer-menu-items>
+        <app-mdc-maua-sidenav-drawer-menu-items [menuStructure]="menuEntry.items"></app-mdc-maua-sidenav-drawer-menu-items>
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length === 0">
@@ -44,7 +44,7 @@
                 </a>
             </ng-container>
             <ul class="site-menu-sub">
-                <mdc-maua-sidenav-drawer-menu-items [menu]="menuEntry.items"></mdc-maua-sidenav-drawer-menu-items>
+                <app-mdc-maua-sidenav-drawer-menu-items [menuStructure]="menuEntry.items"></app-mdc-maua-sidenav-drawer-menu-items>
             </ul>
         </li>
     </ng-container>

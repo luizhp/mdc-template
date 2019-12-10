@@ -23,7 +23,7 @@ import { DrawerMenuItemsComponent } from './sidenav/drawer-menu-items/drawer-men
         DrawerToolbarComponent,
         DrawerMenuComponent,
         DrawerMenuItemsComponent,
-        
+
     ],
     imports: [
         BrowserModule,

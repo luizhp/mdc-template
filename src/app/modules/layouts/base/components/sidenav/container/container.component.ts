@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 
 import { Observable, Subscription } from 'rxjs';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -9,88 +9,85 @@ import { DrawerLayoutService } from './../../../../../../services/layout/drawer-
 import { ScreenBreakpoint } from './../../../../../../models/layouts/screen-breakpoint.interface';
 
 @Component({
-  selector: 'mdc-sidenav-container',
+  selector: 'app-mdc-sidenav-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css']
 })
-export class ContainerComponent implements OnInit, OnDestroy {
+export class ContainerComponent implements OnDestroy {
 
-  private _subscriptions: Subscription = new Subscription();
-  private _screenBreakpoint: ScreenBreakpoint;
+  private subscriptions: Subscription = new Subscription();
+  private screenBreakpoint: ScreenBreakpoint;
 
   @ViewChild('drawer', { static: true }) drawer: MatSidenav;
 
-  drawerRole: string = 'navigation'; //'dialog'; //'navigation';
-  drawerMode: string = 'side';   //'side';   //'over' //'push'
-  drawerOpened: boolean = true;
-  drawerPosition: string = 'start'; //'start' //'end'
+  drawerRole = 'navigation'; //'dialog'; //'navigation';
+  drawerMode = 'side';   //'side';   //'over' //'push'
+  drawerOpened = true;
+  drawerPosition = 'start'; //'start' //'end'
 
   constructor(
     private breakpointLayoutService: BreakpointLayoutService,
     private drawerLayoutService: DrawerLayoutService
   ) {
-
     this._startSubscriptions();
-
   }
 
-  ngOnInit() {
-
-    //console.log('this.drawer._width');
-    //console.log(this.drawer._width);
-
-  }
+  //ngOnInit() {
+  //console.log('this.drawer._width');
+  //console.log(this.drawer._width);
+  //}
 
   ngOnDestroy(): void {
-    this._subscriptions.unsubscribe();
+    this.subscriptions.unsubscribe();
   }
 
   private _startSubscriptions(): void {
 
-    this._subscriptions.add(
-      this.breakpointLayoutService
-        .screenBreakpoint$
-        .subscribe(sb => this._screenBreakpoint = sb)
-    );
+    this.subscriptions
+      .add(
+        this.breakpointLayoutService
+          .screenBreakpoint$
+          .subscribe(sb => this.screenBreakpoint = sb)
+      );
 
-    this._subscriptions.add(
-      this.drawerLayoutService
-        .toggleDrawer$
-        .subscribe(dw => {
-          if (dw)
-            this.drawer.toggle();
-        })
-    );
+    this.subscriptions
+      .add(
+        this.drawerLayoutService
+          .toggleDrawer$
+          .subscribe(dw => {
+            if (dw) {
+              this.drawer.toggle();
+            }
+          })
+      );
 
-    this._subscriptions.add(
+    this.subscriptions
+      .add(
+        this.drawerLayoutService
+          .openDrawer$
+          .subscribe(dw => {
+            if (dw) {
+              this.drawer.open();
+            }
+          })
+      );
+
+    this.subscriptions.add(
       this.drawerLayoutService
         .openDrawer$
         .subscribe(dw => {
-          if (dw)
-            this.drawer.open();
-        })
-    );
-
-    this._subscriptions.add(
-      this.drawerLayoutService
-        .openDrawer$
-        .subscribe(dw => {
-          if (dw)
+          if (dw) {
             this.drawer.close();
+          }
         })
     );
 
   }
 
-
-  arrangeLayout(): void {
-
-    //if (this._screenBreakpoint.breakpoint === 'XSmall') {
-    //}
-
-    //if (this.drawer.toggle())
-    //this.showToolbarMenuButton
-
-  }
+  //arrangeLayout(): void {
+  //if (this.screenBreakpoint.breakpoint === 'XSmall') {}
+  //if (this.drawer.toggle())
+  //this.showToolbarMenuButton
+  //}
 
 }

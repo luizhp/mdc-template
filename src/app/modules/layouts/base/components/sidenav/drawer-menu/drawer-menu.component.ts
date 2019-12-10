@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { Menuitem } from './../../../../../../models/layouts/menuitem.interface';
 
 @Component({
-  selector: 'mdc-sidenav-drawer-menu',
+  selector: 'app-mdc-sidenav-drawer-menu',
   templateUrl: './drawer-menu.component.html',
   styleUrls: ['./drawer-menu.component.css']
 })
-export class DrawerMenuComponent implements OnInit {
+export class DrawerMenuComponent {
 
   menuStructure: Menuitem[] = [
     {
@@ -912,8 +911,5 @@ export class DrawerMenuComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

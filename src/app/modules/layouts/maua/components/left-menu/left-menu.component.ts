@@ -1,37 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { onSideNavChange } from './../../../../../animations/layouts/maua.animations';
-
 import { SidenavService } from 'src/app/services/layout/sidenav.service';
 
 @Component({
-  selector: 'app-left-menu',
+  selector: 'app-mdc-left-menu',
   templateUrl: './left-menu.component.html',
   styleUrls: ['./left-menu.component.css'],
   animations: [onSideNavChange]
 })
-export class LeftMenuComponent implements OnInit {
+export class LeftMenuComponent {
 
-  public sideNavState: boolean = false;
+  public sideNavState = false;
 
   constructor(
-    private _sidenavService: SidenavService,
-  ) { 
-
-  }
-
-  ngOnInit() {
-
-    //remover
-    //setTimeout(() => this.onSidenavToggle(), 200);
-
-  }
+    private sideNavService: SidenavService
+  ) { }
 
   onSidenavToggle() {
 
     this.sideNavState = !this.sideNavState;
 
-    this._sidenavService
+    this.sideNavService
       .sideNavState$
       .next(this.sideNavState);
 

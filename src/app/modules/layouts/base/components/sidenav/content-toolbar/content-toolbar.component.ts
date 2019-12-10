@@ -1,25 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { DrawerLayoutService } from './../../../../../../services/layout/drawer-layout.service';
 
 @Component({
-  selector: 'mdc-sidenav-content-toolbar',
+  selector: 'app-mdc-sidenav-content-toolbar',
   templateUrl: './content-toolbar.component.html',
   styleUrls: ['./content-toolbar.component.css']
 })
-export class ContentToolbarComponent implements OnInit {
+export class ContentToolbarComponent {
 
-  showToolbarMenuButton: boolean = true;
-  showToolbarTitle: boolean = true;
-  toolbarTitle: string = 'MDC TEMPLATE';
+  showToolbarMenuButton = true;
+  showToolbarTitle = true;
+  toolbarTitle = 'Angular Material Template';
 
   constructor(
     private drawerLayoutService: DrawerLayoutService
   ) { }
-
-  ngOnInit() {
-
-  }
 
   drawerToggle() {
     this.drawerLayoutService.toggle();

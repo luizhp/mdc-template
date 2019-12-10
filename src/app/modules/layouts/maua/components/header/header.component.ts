@@ -1,23 +1,19 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component } from '@angular/core';
 import { DrawerLayoutService } from './../../../../../services/layout/drawer-layout.service';
 
 @Component({
-  selector: 'mdc-maua-header',
+  selector: 'app-mdc-maua-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class MauaHeaderComponent implements OnInit {
+export class MauaHeaderComponent {
 
   constructor(
-    private _drawerLayoutService: DrawerLayoutService,
+    private drawerLayoutService: DrawerLayoutService,
   ) { }
 
-  ngOnInit() {
-  }
-
   onDrawerToggle() {
-    this._drawerLayoutService.toggle();
+    this.drawerLayoutService.toggle();
   }
 
 }

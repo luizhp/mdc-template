@@ -1,19 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
 import { Menuitem } from './../../../../../../models/layouts/menuitem.interface';
 
 @Component({
-  selector: 'mdc-sidenav-drawer-menu-items',
+  selector: 'app-mdc-sidenav-drawer-menu-items',
   templateUrl: './drawer-menu-items.component.html',
   styleUrls: ['./drawer-menu-items.component.css']
 })
-export class DrawerMenuItemsComponent implements OnInit {
+export class DrawerMenuItemsComponent {
 
-  @Input('menu') menuStructure: Menuitem[];
+  @Input() menuStructure: Menuitem[];
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

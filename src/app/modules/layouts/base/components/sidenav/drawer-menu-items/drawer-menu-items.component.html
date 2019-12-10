@@ -2,7 +2,7 @@
 
     <ng-container *ngIf="menuEntry.isCategory">
         <li class="site-menu-category">{{menuEntry.name}}</li>
-        <mdc-sidenav-drawer-menu-items [menu]="menuEntry.items"></mdc-sidenav-drawer-menu-items>
+        <app-mdc-sidenav-drawer-menu-items [menuStructure]="menuEntry.items"></app-mdc-sidenav-drawer-menu-items>
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length === 0">
@@ -23,7 +23,7 @@
                 </mat-icon>
             </a>
             <ul class="site-menu-sub">
-                <mdc-sidenav-drawer-menu-items [menu]="menuEntry.items"></mdc-sidenav-drawer-menu-items>
+                <app-mdc-sidenav-drawer-menu-items [menuStructure]="menuEntry.items"></app-mdc-sidenav-drawer-menu-items>
             </ul>
         </li>
     </ng-container>

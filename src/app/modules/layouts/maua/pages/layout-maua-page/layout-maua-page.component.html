@@ -1,17 +1,17 @@
 <div>
 
-  <mdc-maua-header></mdc-maua-header>
+  <app-mdc-maua-header></app-mdc-maua-header>
 
   <mat-sidenav-container class="sidenav-container">
 
     <mat-sidenav #drawer mode="side" opened>
-      <app-left-menu></app-left-menu>
+      <app-mdc-left-menu></app-mdc-left-menu>
     </mat-sidenav>
 
     <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
-      <mdc-maua-sidenav-content>
+      <app-mdc-maua-sidenav-content>
         <ng-content></ng-content>
-      </mdc-maua-sidenav-content>
+      </app-mdc-maua-sidenav-content>
     </mat-sidenav-content>
 
   </mat-sidenav-container>
