@@ -2,12 +2,13 @@
 
     <ng-container *ngIf="menuEntry.isCategory">
         <li class="site-menu-category" [@animateText]="linkText ? 'show' : 'hide'">{{menuEntry.name}}</li>
-        <app-mdc-maua-sidenav-drawer-menu-items [menuStructure]="menuEntry.items"></app-mdc-maua-sidenav-drawer-menu-items>
+        <app-mdc-maua-sidenav-drawer-menu-items [menuStructure]="menuEntry.items">
+        </app-mdc-maua-sidenav-drawer-menu-items>
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length === 0">
         <ng-container *ngIf="linkText">
-            <li class="site-menu-item" [routerLinkActive]="'active'" matTooltip="{{menuEntry.name}}">
+            <li class="site-menu-item" [routerLinkActive]="'active'">
                 <a [routerLink]="menuEntry.href">
                     <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
                     <span class="site-menu-title">{{menuEntry.name}}</span>
@@ -27,13 +28,12 @@
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length > 0">
-        <li class="site-menu-item has-sub">
+        <li class="site-menu-item has-sub" [matTooltip]="linkText ? null : menuEntry.name">
             <ng-container *ngIf="linkText">
                 <a href="javascript:void(0)">
                     <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
                     <span class="site-menu-title">{{menuEntry.name}}</span>
-                    <mat-icon aria-label="icon" class="site-menu-icon site-menu-arrow">keyboard_arrow_right
-                    </mat-icon>
+                    <mat-icon aria-label="icon" class="site-menu-icon site-menu-arrow">keyboard_arrow_right</mat-icon>
                 </a>
             </ng-container>
             <ng-container *ngIf="!linkText">
@@ -44,7 +44,8 @@
                 </a>
             </ng-container>
             <ul class="site-menu-sub">
-                <app-mdc-maua-sidenav-drawer-menu-items [menuStructure]="menuEntry.items"></app-mdc-maua-sidenav-drawer-menu-items>
+                <app-mdc-maua-sidenav-drawer-menu-items [menuStructure]="menuEntry.items">
+                </app-mdc-maua-sidenav-drawer-menu-items>
             </ul>
         </li>
     </ng-container>
