@@ -15,7 +15,8 @@
             </li>
         </ng-container>
         <ng-container *ngIf="!linkText">
-            <li class="site-menu-item site-menu-item-reduced" [routerLinkActive]="'active'" matTooltip="{{menuEntry.name}}">
+            <li class="site-menu-item site-menu-item-reduced" [routerLinkActive]="'active'"
+                matTooltip="{{menuEntry.name}}">
                 <a [routerLink]="menuEntry.href">
                     <mat-icon aria-label="icon" class="site-menu-icon-reduced">
                         {{menuEntry.icon}}
@@ -26,13 +27,22 @@
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length > 0">
-        <li class="site-menu-item has-sub" [@animateText]="linkText ? 'show' : 'hide'">
-            <a href="javascript:void(0)">
-                <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
-                <span class="site-menu-title">{{menuEntry.name}}</span>
-                <mat-icon aria-label="icon" class="site-menu-icon site-menu-arrow">keyboard_arrow_right
-                </mat-icon>
-            </a>
+        <li class="site-menu-item has-sub">
+            <ng-container *ngIf="linkText">
+                <a href="javascript:void(0)">
+                    <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
+                    <span class="site-menu-title">{{menuEntry.name}}</span>
+                    <mat-icon aria-label="icon" class="site-menu-icon site-menu-arrow">keyboard_arrow_right
+                    </mat-icon>
+                </a>
+            </ng-container>
+            <ng-container *ngIf="!linkText">
+                <a href="javascript:void(0)">
+                    <mat-icon aria-label="icon" class="site-menu-icon-reduced">{{menuEntry.icon}}</mat-icon>
+                    <mat-icon aria-label="icon" class="site-menu-icon-reduced site-menu-arrow">keyboard_arrow_right
+                    </mat-icon>
+                </a>
+            </ng-container>
             <ul class="site-menu-sub">
                 <mdc-maua-sidenav-drawer-menu-items [menu]="menuEntry.items"></mdc-maua-sidenav-drawer-menu-items>
             </ul>
