@@ -20,7 +20,7 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
   @Input() menuStructure: Menuitem[];
 
   constructor(
-    private sidenavService: SidenavService,
+    private sideNavService: SidenavService,
   ) {
     this._startSubscriptions();
   }
@@ -32,17 +32,33 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
   private _startSubscriptions(): void {
     this.subscriptions
       .add(
-        this.sidenavService
+        this.sideNavService
           .sideNavState$
-          .subscribe(sn => this.linkText = sn)
+          .subscribe(sn => {
+            if (!sn) {
+              this.menuStructure.map(x => x.isFold = true);
+            }
+            this.linkText = sn;
+          })
       );
   }
 
   public toggleMenu(e: Event, mi: Menuitem): void {
     e.stopPropagation();
+    if (!this.linkText) {
+      this.onSidenavToggle();
+    }
     mi.isFold = !mi.isFold;
-    //console.log(e);
-    //console.log(mi);
+  }
+
+  onSidenavToggle() {
+
+    this.linkText = !this.linkText;
+
+    this.sideNavService
+      .sideNavState$
+      .next(this.linkText);
+
   }
 
 }

@@ -28,7 +28,7 @@
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length > 0">
-        <li class="site-menu-item has-sub" [ngClass]="menuEntry.isFold ? '': 'open'" [matTooltip]="linkText ? null : menuEntry.name" (click)="toggleMenu($event, menuEntry)">
+        <li class="site-menu-item has-sub" [ngClass]="((menuEntry.isFold) ? '': (linkText ? 'open' : ''))" [matTooltip]="linkText ? null : menuEntry.name" (click)="toggleMenu($event, menuEntry)">
             <a href="javascript:void(0)">
                 <ng-container *ngIf="linkText">
                     <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
