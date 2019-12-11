@@ -306,7 +306,7 @@ export class MenuService {
     },
     {
       name: 'Elements',
-      isFold: true,
+      isFold: false,
       isCategory: true,
       items: [
         {
@@ -820,7 +820,7 @@ export class MenuService {
         {
           name: 'Apps',
           icon: 'apps',
-          isFold: false,
+          isFold: true,
           items: [
             {
               name: 'Contacts',
@@ -844,7 +844,7 @@ export class MenuService {
             },
             {
               name: 'Documents',
-              isFold: false,
+              isFold: true,
               items: [
                 {
                   name: 'Articles',
