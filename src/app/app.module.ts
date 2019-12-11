@@ -13,10 +13,12 @@ import { AppComponent } from './app.component';
 import { LayoutBaseModule } from './modules/layouts/base/layout-base.module';
 import { LayoutMauaModule } from './modules/layouts/maua/pages/layout-maua.module';
 
+import { PrettyPrintPipe } from './pipes/pretty-print.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PrettyPrintPipe
   ],
   imports: [
     BrowserModule,
