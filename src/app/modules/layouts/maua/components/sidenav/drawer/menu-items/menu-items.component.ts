@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import { SidenavService } from 'src/app/services/layout/sidenav.service';
 import { onSideNavChange, animateText } from 'src/app/animations/layouts/maua.animations';
@@ -12,7 +12,7 @@ import { Menuitem } from 'src/app/models/layouts/menuitem.interface';
   styleUrls: ['./menu-items.component.css'],
   animations: [onSideNavChange, animateText]
 })
-export class MauaSidenavDrawerMenuItemsComponent implements OnInit, OnDestroy {
+export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
 
   private subscriptions: Subscription = new Subscription();
   public linkText = false;
@@ -25,8 +25,6 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnInit, OnDestroy {
     this._startSubscriptions();
   }
 
-  ngOnInit() { }
-
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
@@ -38,6 +36,13 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnInit, OnDestroy {
           .sideNavState$
           .subscribe(sn => this.linkText = sn)
       );
+  }
+
+  public toggleMenu(e: Event, mi: Menuitem): void {
+    e.stopPropagation();
+    mi.isFold = !mi.isFold;
+    //console.log(e);
+    //console.log(mi);
   }
 
 }
