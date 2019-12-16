@@ -8,8 +8,9 @@
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length === 0">
         <ng-container *ngIf="linkText">
-            <li class="site-menu-item" [routerLinkActive]="'active'">
-                <a [routerLink]="menuEntry.href">
+            <li class="site-menu-item" [routerLinkActive]="'active'" (click)="go($event, menuEntry)">
+                <a href="javascript:void(0)">
+                    <!-- <a [routerLink]="menuEntry.href"> -->
                     <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>
                     <span class="site-menu-title">{{menuEntry.name}}</span>
                 </a>
@@ -17,8 +18,9 @@
         </ng-container>
         <ng-container *ngIf="!linkText">
             <li class="site-menu-item site-menu-item-reduced" [routerLinkActive]="'active'"
-                matTooltip="{{menuEntry.name}}">
-                <a [routerLink]="menuEntry.href">
+                matTooltip="{{menuEntry.name}}" (click)="go($event, menuEntry)">
+                <a href="javascript:void(0)">
+                    <!-- <a [routerLink]="menuEntry.href"> -->
                     <mat-icon aria-label="icon" class="site-menu-icon-reduced">
                         {{menuEntry.icon}}
                     </mat-icon>
@@ -28,7 +30,8 @@
     </ng-container>
 
     <ng-container *ngIf="!menuEntry.isCategory && menuEntry.items.length > 0">
-        <li class="site-menu-item has-sub" [ngClass]="((menuEntry.isFold) ? '': (linkText ? 'open' : ''))" [matTooltip]="linkText ? null : menuEntry.name" (click)="toggleMenu($event, menuEntry)">
+        <li class="site-menu-item has-sub" [ngClass]="((menuEntry.isFold) ? '': (linkText ? 'open' : ''))"
+            [matTooltip]="linkText ? null : menuEntry.name" (click)="toggleMenu($event, menuEntry)">
             <a href="javascript:void(0)">
                 <ng-container *ngIf="linkText">
                     <mat-icon aria-label="icon" class="site-menu-icon">{{menuEntry.icon}}</mat-icon>

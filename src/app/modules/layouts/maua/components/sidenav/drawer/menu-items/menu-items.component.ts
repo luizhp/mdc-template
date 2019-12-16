@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { SidenavService } from 'src/app/services/layout/sidenav.service';
@@ -21,6 +21,7 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
 
   constructor(
     private sideNavService: SidenavService,
+    private _router: Router
   ) {
     this._startSubscriptions();
   }
@@ -45,10 +46,20 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
 
   public toggleMenu(e: Event, mi: Menuitem): void {
     e.stopPropagation();
+    console.log(e);
     if (!this.linkText) {
       this.onSidenavToggle();
     }
     mi.isFold = !mi.isFold;
+    console.log(mi);
+  }
+
+  public go(e: Event, mi: Menuitem): void {
+    e.stopPropagation();
+    console.log('go');
+    console.log(e);
+    console.log(mi);
+    this._router.navigateByUrl(mi.href);
   }
 
   onSidenavToggle() {
