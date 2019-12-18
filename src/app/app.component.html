@@ -1,19 +1,11 @@
 <ng-container *ngIf="isTemplateMaterial">
     <app-mdc-layout-maua-page>
-        <!-- <span style="font-size:95px;">🃏</span>conteúdo aqui<br> -->
-        <!-- {{menuStructure | json}} -->
-        <pre [innerHTML]="menuStructure | prettyprint"></pre>
-        <!-- <span style="font-size:95px;">🃏</span><br>
-        <router-outlet></router-outlet> -->
+        <router-outlet></router-outlet>
     </app-mdc-layout-maua-page>
 </ng-container>
 
 <ng-container *ngIf="!isTemplateMaterial">
     <app-mdc-layout-base-page>
-        <span style="font-size:95px;">🃏</span>
-        conteúdo aqui
-        <span style="font-size:95px;">🃏</span>
-        <br>
         <router-outlet></router-outlet>
     </app-mdc-layout-base-page>
 </ng-container>
