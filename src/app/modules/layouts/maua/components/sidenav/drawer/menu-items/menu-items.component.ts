@@ -45,10 +45,14 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
   }
 
   public toggleMenu(e: Event, mi: Menuitem): void {
+    let elParent: HTMLElement;
     e.stopPropagation();
-    console.log(e);
     if (!this.linkText) {
+      elParent = (e.target as HTMLElement).parentElement.parentElement;
       this.onSidenavToggle();
+      setTimeout(_ => {
+        elParent.scrollIntoView();
+      }, 500);
     }
     mi.isFold = !mi.isFold;
     console.log(mi);
