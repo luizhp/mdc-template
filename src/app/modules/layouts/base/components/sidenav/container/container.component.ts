@@ -32,10 +32,10 @@ export class ContainerComponent implements OnDestroy {
     this._startSubscriptions();
   }
 
-  //ngOnInit() {
-  //console.log('this.drawer._width');
-  //console.log(this.drawer._width);
-  //}
+  // ngOnInit() {
+  // console.log('this.drawer._width');
+  // console.log(this.drawer._width);
+  // }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
@@ -84,10 +84,10 @@ export class ContainerComponent implements OnDestroy {
 
   }
 
-  //arrangeLayout(): void {
-  //if (this.screenBreakpoint.breakpoint === 'XSmall') {}
-  //if (this.drawer.toggle())
-  //this.showToolbarMenuButton
-  //}
+  // arrangeLayout(): void {
+  // if (this.screenBreakpoint.breakpoint === 'XSmall') {}
+  // if (this.drawer.toggle())
+  // this.showToolbarMenuButton
+  // }
 
 }

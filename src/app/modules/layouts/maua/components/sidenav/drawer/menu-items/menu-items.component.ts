@@ -21,7 +21,7 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
 
   constructor(
     private sideNavService: SidenavService,
-    private _router: Router
+    private router: Router
   ) {
     this._startSubscriptions();
   }
@@ -55,15 +55,15 @@ export class MauaSidenavDrawerMenuItemsComponent implements OnDestroy {
       }, 500);
     }
     mi.isFold = !mi.isFold;
-    console.log(mi);
+    // console.log(mi);
   }
 
   public go(e: Event, mi: Menuitem): void {
     e.stopPropagation();
-    console.log('go');
-    console.log(e);
-    console.log(mi);
-    this._router.navigateByUrl(mi.href);
+    // console.log('go');
+    // console.log(e);
+    // console.log(mi);
+    this.router.navigateByUrl(mi.href);
   }
 
   onSidenavToggle() {
