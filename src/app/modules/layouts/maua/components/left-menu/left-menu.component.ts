@@ -33,13 +33,4 @@ export class LeftMenuComponent implements OnDestroy {
       );
   }
 
-  onSidenavToggle() {
-
-    //this.sideNavState = !this.sideNavState;
-    this.sideNavService
-      .sideNavState$
-      .next(!this.sideNavState);
-
-  }
-
 }

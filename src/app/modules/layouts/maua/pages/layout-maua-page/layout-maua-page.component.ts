@@ -13,10 +13,12 @@ import { DrawerLayoutService } from './../../../../../services/layout/drawer-lay
 })
 export class LayoutMauaPageComponent implements OnDestroy {
 
+  @ViewChild('drawer', { static: true }) drawer: MatSidenav;
+
   private subscriptions: Subscription = new Subscription();
 
   public onSideNavChange: boolean;
-  @ViewChild('drawer', { static: true }) drawer: MatSidenav;
+  // private isSideNavVisible: boolean;
 
   constructor(
     private sideNavService: SidenavService,
@@ -35,20 +37,33 @@ export class LayoutMauaPageComponent implements OnDestroy {
       .add(
         this.sideNavService
           .sideNavState$
-          .subscribe(res => {
-            console.log(res)
-            this.onSideNavChange = res;
-          })
+          .subscribe(
+            res => {
+              console.log(res);
+              this.onSideNavChange = res;
+            })
       );
+
+    // this.subscriptions
+    //   .add(
+    //     this.sideNavService
+    //       .isSideNavVisible$
+    //       .subscribe(
+    //         isSideNavVisible =>
+    //           this.isSideNavVisible = isSideNavVisible
+    //       )
+    //   );
 
     this.subscriptions
       .add(
         this.layoutDrawerService
           .toggleDrawer$
-          .subscribe(t => {
-            this.drawer.toggle();
-          })
-      )
+          .subscribe(
+            _ => {
+              this.drawer.toggle();
+              this.sideNavService.isSideNavVisible$.next(this.drawer.opened);
+            })
+      );
 
   }
 
