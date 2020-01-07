@@ -1,5 +1,5 @@
-<div fxLayout="row" fxLayoutAlign="start end" style="padding: 0px 0px; border-top: 1px solid black;">
-    <button mat-icon-button (click)="onSidenavToggle()" *ngIf="isSideNavVisible">
+<div fxLayout="row" fxLayoutAlign="start end" class="footer" *ngIf="isSideNavVisible">
+    <button mat-icon-button (click)="onSidenavToggle()">
         <mat-icon *ngIf="sideNavState">arrow_left</mat-icon>
         <mat-icon *ngIf="!sideNavState">arrow_right</mat-icon>
     </button>

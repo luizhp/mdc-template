@@ -1,4 +1,4 @@
-<div class="page">
+<div class="page" [ngClass]="isSideNavVisible ? 'page-footer': 'page-no_footer'">
     <div class="page-layout">
         <ng-content></ng-content>
     </div>
